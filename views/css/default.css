@@ -1,0 +1,65 @@
+body {
+    font-family: Tahoma, sans-serif;
+}
+
+.ranking th {
+    font-size: xx-large;
+}
+
+.h2 {
+    font-size: medium;
+}
+
+.h3 {
+    font-size: small;
+}
+
+#navbar {
+    float: left;
+    width: 100%;
+}
+
+#navbar ul li{
+    float: left;
+    list-style: none;
+}
+
+#navbar #searchform {
+    float: right;
+}
+
+#header {
+    float: left;
+    background-color: #abcbcb;
+    font-family: Georgia, serif;
+    width: 100%;
+}
+
+#header a:hover {
+    text-decoration: none;
+}
+
+#subheader {
+    float: left;
+    background-color: #abcbab;
+    font-family: Georgia, serif;
+    width: 100%;
+}
+
+#leftdiv {
+    float: left;
+    background-color: #cbcbab;
+    width: 20%;
+}
+
+#main {
+    float: right;
+    background-color: #ababcb;
+    width: 80%;
+}
+
+#footer {
+    float: left;
+    background-color: #cbabab;
+    width: 100%;
+}
