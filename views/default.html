@@ -12,10 +12,10 @@
   <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-default">
+<nav id="topnav" class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -23,14 +23,14 @@
       </button>
       <a class="navbar-brand" href="#">MyCL</a>
     </div>
-    <div class="collapse navbar-collapse"> <!-- id="bs-example-navbar-collapse-1" -->
+    <div id="navbar1" class="collapse navbar-collapse main-nav">
       <ul class="nav navbar-nav navbar-left">
-        <li role="presentation" class="dropdown">
-          <a id="dLabel" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+        
+        <li class="dropdown" role="presentation">
+          <a class="dropdown-toggle" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
             Composers
             <span class="caret"></span>
           </a>
-
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
             <li><a href="search.php?type=composers">Composer Search</a></li>
             <li><a href="reviews.php?type=composers">Reviews</a></li>
@@ -38,12 +38,12 @@
             <li><a href="toplist.php?type=composers">Top Composers</a></li>
           </ul>
         </li>
-        <li role="presentation" class="dropdown">
-          <a id="dLabel" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+        
+        <li class="dropdown" role="presentation">
+          <a class="dropdown-toggle" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
             Works
             <span class="caret"></span>
           </a>
-
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
             <li><a href="search.php?type=works">Work Search</a></li>
             <li><a href="reviews.php?type=works">Reviews</a></li>
@@ -51,12 +51,12 @@
             <li><a href="toplist.php?type=works">Top Works</a></li>
           </ul>
         </li>
-        <li role="presentation" class="dropdown">
-          <a id="dLabel" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+        
+        <li class="dropdown" role="presentation">
+          <a class="dropdown-toggle" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
             Performances
             <span class="caret"></span>
           </a>
-
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
             <li><a href="search.php?type=performances">Performance Search</a></li>
             <li><a href="reviews.php?type=performances">Reviews</a></li>
@@ -64,12 +64,12 @@
             <li><a href="toplist.php?type=performances">Top Performances</a></li>
           </ul>
         </li>
-        <li role="presentation" class="dropdown">
-          <a id="dLabel" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+        
+        <li class="dropdown" role="presentation">
+          <a class="dropdown-toggle" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
             Recordings
             <span class="caret"></span>
           </a>
-
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
             <li><a href="search.php?type=recordings">Recording Search</a></li>
             <li><a href="reviews.php?type=recordings">Reviews</a></li>
@@ -77,12 +77,12 @@
             <li><a href="toplist.php?type=recordings">Top Recordings</a></li>
           </ul>
         </li>
-        <li role="presentation" class="dropdown">
-          <a id="dLabel" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+        
+        <li class="dropdown" role="presentation">
+          <a class="dropdown-toggle" data-target="#" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
             Labels
             <span class="caret"></span>
           </a>
-
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
             <li><a href="search.php?type=labels">Label Search</a></li>
             <li><a href="reviews.php?type=labels">Reviews</a></li>
@@ -90,9 +90,11 @@
             <li><a href="toplist.php?type=labels">Top Labels</a></li>
           </ul>
         </li>
+        
         <li role="presentation">
           <a href="signup.php">Sign Up</a>
         </li>
+        
         <li role="presentation">
           <a href="login.php">Login</a>
         </li>
@@ -109,12 +111,12 @@
             <option value="labels">Labels</option>
             <option value="labels">Users</option>
           </select>
-          
         </div>
         <div class="btn-group btn-group-sm">
           <button id="searchsubmit" class="btn btn-default" type="submit">Search</button>
         </div>
       </form>
+      
     </div>
   </div>
 </nav>
@@ -125,25 +127,25 @@
   </div>
 </div>
 
-<nav id="subheader" class="navbar navbar-default">
+<div id="subheader" class="">
   <div class="container">
-    <div class="navbar-header">
-      <p class="navbar-text navbar-left">
-        <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
-          Welcome to MyCL
-        <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
-      </p>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav nav-pills" role="tablist">
-        <li role="presentation" class="active"><a href="home.php">Home</a></li>
-        <li role="presentation"><a href="profile.php">Profile</a></li>
-        <li role="presentation"><a href="messages.php">Messages <span class="badge">0</span></a></li>
-        <li role="presentation"><a href="settings.php">Settings</a></li>
+
+      <ul class="nav nav-pills">
+        <li class="nav-right">
+          <a href="#">
+            <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+              Welcome to MyCL
+            <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+          </a>
+        </li>
+        <li class="nav-right active"><a href="home.php">Home</a></li>
+        <li class="nav-right"><a href="profile.php">Profile</a></li>
+        <li class="nav-right"><a href="messages.php">Messages <span class="badge">0</span></a></li>
+        <li class="nav-right"><a href="settings.php">Settings</a></li>
       </ul>
-    </div>
+
   </div>
-</nav>
+</div>
 
 <div id="main" class="container-fluid">
 
