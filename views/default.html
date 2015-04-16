@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="css/default.css" />
   <script src="js/jquery-2.1.3.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/default.js"></script>
 </head>
 <body>
 <nav id="topnav" class="navbar navbar-default" role="navigation">
@@ -154,59 +155,8 @@
     <div id="mytoplist" class="col-sm-3 section">
       <div id="default_header"><h3>My Top Composers</h3></div>
       <ul class="list-group">
-        <li class="list-group-item">
-          <table class="ranking">
-            <tr>
-              <th rowspan="4">1</th>
-              <td rowspan="4"><div class="col-xs-6 col-md-4">composer.jpg</div></td>
-              <td><a href="composers/id/">Composer Name</a></td>
-            </tr>
-            <tr>
-              <td>stuff 1</td>
-            </tr>
-            <tr>
-              <td>stuff 2</td>
-            </tr>
-            <tr>
-              <td>stuff 3</td>
-            </tr>
-          </table>
-        </li>
-        <li class="list-group-item">
-          <table class="ranking">
-            <tr>
-              <th rowspan="4">2</th>
-              <td rowspan="4"><div class="col-xs-6 col-md-4">composer.jpg</div></td>
-              <td><a href="composers/id/">Composer Name</a></td>
-            </tr>
-            <tr>
-              <td>stuff 1</td>
-            </tr>
-            <tr>
-              <td>stuff 2</td>
-            </tr>
-            <tr>
-              <td>stuff 3</td>
-            </tr>
-          </table>
-        </li>
-        <li class="list-group-item">
-          <table class="ranking">
-            <tr>
-              <th rowspan="4">3</th>
-              <td rowspan="4"><div class="col-xs-6 col-md-4">composer.jpg</div></td>
-              <td><a href="composers/id/">Composer Name</a></td>
-            </tr>
-            <tr>
-              <td>stuff 1</td>
-            </tr>
-            <tr>
-              <td>stuff 2</td>
-            </tr>
-            <tr>
-              <td>stuff 3</td>
-            </tr>
-          </table>
+        <li class="list-group-item showmore">
+          <h4><a href="#">Show More...</a></h4>
         </li>
       </ul>
     </div>
@@ -215,20 +165,26 @@
       <div id="default_header"><h3>My Most Recent Activity</h3></div>
       <ul class="list-group">
         <li class="list-group-item">
-          <h3><a href="#">New Post...</a></h3>
+          <a class="btn btn-primary" data-toggle="collapse" href="#newpostdiv" aria-expanded="false" aria-controls="newpostdiv">
+            New Post...
+          </a>
+          <div id="newpostdiv" class="container-fluid collapse">
+            <form id="newpostform" action="search.php" method="post">
+              <div class="form-group form-group-sm">
+                <label for="newposttitle">Title:</label>
+                <input id="newposttitle" class="form-control" type="text" placeholder="Title" name="newposttitle" />
+                <label for="newposttext">Text:</label>
+                <textarea id="newposttext" class="form-control custom-control" style="resize:none" placeholder="Text" name="newposttext" rows="8" cols="50"></textarea>
+              </div>
+              <div class="btn-group btn-group-sm pull-right">
+                <button id="postsubmit" class="btn btn-default" type="submit">Post</button>
+                <button id="postclear" class="btn btn-default" type="reset">Reset</button>
+              </div>
+            </form>
+          </div>
         </li>
-        <li class="list-group-item">
-          <h3>Title goes here</h3>
-          <p>3 wolf moon banh mi Bushwick mlkshk Wes Anderson. Cronut mumblecore flexitarian pug readymade banh mi. Wes Anderson Neutra Austin health goth twee four dollar toast normcore. Pour-over salvia seitan iPhone Schlitz, vegan before they sold out stumptown. Shabby chic direct trade Echo Park, Odd Future Helvetica Truffaut mlkshk mixtape listicle vegan meditation craft beer tattooed cardigan banh mi. Cred Neutra drinking vinegar, lomo trust fund locavore fap cardigan tattooed next level High Life freegan wolf direct trade. Banksy blog kitsch, mustache flannel American Apparel VHS put a bird on it Intelligentsia dreamcatcher cardigan.</p>
-          <small>January 1st, 2015, 12:00 AM</small> by <a href="">Username</a> | <a href="">Comments (0)</a>
-        </li>
-        <li class="list-group-item">
-          <h3>Title goes here</h3>
-          <p>Gastropub 90's letterpress, sartorial Truffaut sriracha direct trade heirloom mixtape chambray. Distillery Odd Future migas Austin Pinterest, lo-fi tofu master cleanse 8-bit Kickstarter McSweeney's. Ugh post-ironic VHS butcher try-hard. Stumptown paleo craft beer, hoodie art party readymade skateboard synth banjo narwhal fashion axe street art Portland cliche next level. Lomo 3 wolf moon Wes Anderson, raw denim YOLO tousled mlkshk next level Vice you probably haven't heard of them paleo sustainable selvage shabby chic butcher. Austin next level locavore direct trade freegan pour-over. Brunch selfies kitsch pour-over.</p>
-          <small>January 1st, 2015, 12:00 AM</small> by <a href="">Username</a> | <a href="">Comments (0)</a>
-        </li>
-        <li class="list-group-item">
-          <h3><a href="#">Show More...</a></h3>
+        <li class="list-group-item showmore">
+          <h4><a href="#">Show More...</a></h4>
         </li>
       </ul>
     </div>
@@ -236,11 +192,8 @@
     <div id="myfriendslist" class="col-sm-3 section">
       <div id="default_header"><h3>My Friends</h3></div>
       <ul class="list-group">
-        <li class="list-group-item">
-          <h3><a href="">Friend 1</a></h3>
-        </li>
-        <li class="list-group-item">
-          <h3><a href="">Friend 2</a></h3>
+        <li class="list-group-item showmore">
+          <h4><a href="#">Show More...</a></h4>
         </li>
       </ul>
     </div>
@@ -248,11 +201,8 @@
     <div id="myeditslist" class="col-sm-3 section">
       <div id="default_header"><h3>My Edits</h3></div>
       <ul class="list-group">
-        <li class="list-group-item">
-          <h3><a href="">Edit 1</a></h3>
-        </li>
-        <li class="list-group-item">
-          <h3><a href="">Edit 2</a></h3>
+        <li class="list-group-item showmore">
+          <h4><a href="#">Show More...</a></h4>
         </li>
       </ul>
     </div>
@@ -260,59 +210,8 @@
     <div id="toplist" class="col-sm-3 section">
       <div id="default_header"><h3>Top Rated Composers</h3></div>
       <ul class="list-group">
-        <li class="list-group-item">
-          <table class="ranking">
-            <tr>
-              <th rowspan="4">1</th>
-              <td rowspan="4"><div class="col-xs-6 col-md-4">composer.jpg</div></td>
-              <td><a href="composers/id/">Composer Name</a></td>
-            </tr>
-            <tr>
-              <td>stuff 1</td>
-            </tr>
-            <tr>
-              <td>stuff 2</td>
-            </tr>
-            <tr>
-              <td>stuff 3</td>
-            </tr>
-          </table>
-        </li>
-        <li class="list-group-item">
-          <table class="ranking">
-            <tr>
-              <th rowspan="4">2</th>
-              <td rowspan="4"><div class="col-xs-6 col-md-4">composer.jpg</div></td>
-              <td><a href="composers/id/">Composer Name</a></td>
-            </tr>
-            <tr>
-              <td>stuff 1</td>
-            </tr>
-            <tr>
-              <td>stuff 2</td>
-            </tr>
-            <tr>
-              <td>stuff 3</td>
-            </tr>
-          </table>
-        </li>
-        <li class="list-group-item">
-          <table class="ranking">
-            <tr>
-              <th rowspan="4">3</th>
-              <td rowspan="4"><div class="col-xs-6 col-md-4">composer.jpg</div></td>
-              <td><a href="composers/id/">Composer Name</a></td>
-            </tr>
-            <tr>
-              <td>stuff 1</td>
-            </tr>
-            <tr>
-              <td>stuff 2</td>
-            </tr>
-            <tr>
-              <td>stuff 3</td>
-            </tr>
-          </table>
+        <li class="list-group-item showmore">
+          <h4><a href="#">Show More...</a></h4>
         </li>
       </ul>
     </div>
@@ -320,15 +219,8 @@
     <div id="newsfeed" class="col-sm-6 section">
       <div id="default_header"><h3>Latest News</h3></div>
       <ul class="list-group">
-        <li class="list-group-item">
-          <h3>Title goes here</h3>
-          <p>Flannel tousled narwhal sustainable selvage church-key. Swag vinyl roof party, 3 wolf moon blog Carles Intelligentsia. Mlkshk cornhole meggings High Life small batch Shoreditch, Odd Future roof party +1 ethical pour-over cray hella fanny pack photo booth. Pug Pinterest chambray, cornhole freegan keytar seitan taxidermy hoodie. Ennui master cleanse craft beer, Helvetica lumbersexual Kickstarter farm-to-table cronut pickled Bushwick bespoke cornhole. Cred Echo Park farm-to-table chambray, squid actually Thundercats semiotics wayfarers small batch sriracha direct trade fashion axe ethical. XOXO street art hella, stumptown fap organic ethical Portland.</p>
-          <small>January 1st, 2015, 12:00 AM</small> by <a href="">Username</a> | <a href="">Comments (0)</a>
-        </li>
-        <li class="list-group-item">
-          <h3>Title goes here</h3>
-          <p>Banjo bicycle rights paleo, pickled hella Carles YOLO. Ugh Neutra lo-fi salvia. Sartorial +1 distillery mustache Thundercats, Brooklyn lomo High Life fanny pack Wes Anderson Williamsburg. Put a bird on it blog aesthetic meh umami organic. Small batch seitan taxidermy, beard listicle forage keffiyeh Odd Future before they sold out bespoke church-key raw denim. Thundercats aesthetic readymade, Shoreditch swag High Life Austin fashion axe. Pork belly Wes Anderson freegan semiotics kogi kale chips.</p>
-          <small>January 1st, 2015, 12:00 AM</small> by <a href="">Username</a> | <a href="">Comments (0)</a>
+        <li class="list-group-item showmore">
+          <h4><a href="#">Show More...</a></h4>
         </li>
       </ul>
     </div>

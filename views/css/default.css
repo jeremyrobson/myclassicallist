@@ -19,6 +19,11 @@ body {
     margin: 0;
 }
 
+/* show all textarea rows */
+#newposttext {
+  height: 100%;
+}
+
 .section:nth-child(6n+0) { background-color: #cbcbab; /*CCA*/ }
 .section:nth-child(6n+1) { background-color: #abcbcb; /*ACC*/ }
 .section:nth-child(6n+2) { background-color: #abcbab; /*ACA*/ }
