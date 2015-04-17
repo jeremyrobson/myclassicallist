@@ -1,17 +1,69 @@
-function load_posts(id, count) {
+function load_comment(data, index) {
+    var comment = document.createElement("li");
+    var commentusername = data.username;
+    var commentdate = data.date;
+    var commenttext = data.text;
+    var html = "<h4><a href='#'>" + commentusername + "</a> says...</h4>";
+    html += "<p>" + index + ". " + commenttext + "</p>";
+    html += "<small>" + commentdate + "</small>";
+    $(comment).addClass("list-group-item").html(html);
+    return comment;
+}
+
+function load_post(data) {
+    var post = document.createElement("li");
+    var postid = data._id;
+    var posttitle = data.title;
+    var posttext = data.text;
+    var postdate = data.date;
+    var postusername = data.username;
+    var postcommentcount = (data.comments) ? data.comments.length : 0;
+    var html = "<h3>" + posttitle + "</h3>";
+    html += "<p>" + posttext + "</p>";
+    html += "<small>" + postdate + "</small>";
+    html += " by " + "<a href='#'>" + postusername + "</a>";
+    html += " | " + '<a data-toggle="collapse" href="#commentdiv' + postid + '">Comments (' + postcommentcount + ')</a>';
+    $(post).addClass("list-group-item").html(html);
+    
+    var commentdiv = document.createElement("div");
+    commentdiv.id = "commentdiv" + postid;
+    var commentlist = document.createElement("ul");
+    var newcomment = document.createElement("li")
+    $(newcomment).addClass("list-group-item").html(
+        '<div id="newcommentdiv" class="container-fluid">' +
+        '<form id="newcommentform" action="newcomment.php" method="post">' +
+        '<div class="form-group form-group-sm">' +
+        '<textarea id="newcommenttext" class="form-control custom-control" style="resize:none" placeholder="New Comment" name="newcommenttext" rows="4" cols="50"></textarea>' +
+        '</div>' +
+        '<div class="btn-group btn-group-sm pull-right">' +
+        '<button id="postsubmit" class="btn btn-default" type="submit">Post</button>' +
+        '</div>' +
+        '</fieldset>' +
+        '</form>' +
+        '</div>'
+    );
+    $(commentlist).append($(newcomment));
+    
+    for (var i=0;i<postcommentcount;i++)
+        $(commentlist).append($(load_comment(data.comments[i], i+1)));
+    
+    var showmore = document.createElement("li");
+    $(showmore).addClass("list-group-item").html( //showmore
+        '<h4><a href="#">Show More...</a></h4>'
+    );
+    $(commentlist).append($(showmore));
+    
+    $(commentdiv).addClass("container-fluid collapse").append(commentlist);
+    
+    $(post).append($(commentdiv)); 
+
+    return post;
+}
+
+function load_posts(id, data, count) {
+    if (data.length < count) count = data.length;
     for (var i=0; i<count; i++) {
-        var post = document.createElement("li");
-        var posttitle = "hipster stuff";
-        var posttext = "3 wolf moon banh mi Bushwick mlkshk Wes Anderson. Cronut mumblecore flexitarian pug readymade banh mi. Wes Anderson Neutra Austin health goth twee four dollar toast normcore. Pour-over salvia seitan iPhone Schlitz, vegan before they sold out stumptown. Shabby chic direct trade Echo Park, Odd Future Helvetica Truffaut mlkshk mixtape listicle vegan meditation craft beer tattooed cardigan banh mi. Cred Neutra drinking vinegar, lomo trust fund locavore fap cardigan tattooed next level High Life freegan wolf direct trade. Banksy blog kitsch, mustache flannel American Apparel VHS put a bird on it Intelligentsia dreamcatcher cardigan.";
-        var postdate = "January 1st, 2015, 12:00 AM";
-        var postuser = "Username";
-        var postcommentcount = 0;
-        var html = "<h3>" + posttitle + "</h3>";
-        html += "<p>" + posttext + "</p>";
-        html += "<small>" + postdate + "</small>"; 
-        html += " by " + "<a href='#'>" + postuser + "</a>";
-        html += " | " + "<a href='#'>Comments (" + postcommentcount + ")</a>";
-        $(post).addClass("list-group-item").html(html);
+        var post = load_post(data[i]);
         $(post).insertBefore($(id + " .showmore"));
     }
 }
@@ -71,14 +123,36 @@ function load_edit_list(id, count) {
     }
 }
 
-$(document).ready(function() {
-    $('a[href="#newpost"]').click(function() {
-        $("#newpostform").removeClass("hidden");
-    });
-    load_posts("#myactivitylist", 3);
-    load_posts("#newsfeed", 3);
+function load_default() {
+    load_posts("#myactivitylist", postexample, 3);
+    load_posts("#newsfeed", postexample, 3);
     load_top_list("#toplist", 5);
     load_top_list("#mytoplist", 5);
     load_user_list("#myfriendslist", 5);
     load_edit_list("#myeditslist", 5);
+}
+
+function load_index() {
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(function(a, i) {
+        var link = document.createElement("a");
+        $(link).attr("href", "#" + a).html(a).css("padding", "8px");
+        $("#letters").append(link);
+
+        var div = document.createElement('div');
+        html = '<h3 id="' + a + '">' + a + '</h3>';
+        html += '<ul>';
+        var rand = Math.floor(Math.random() * 10);
+        for (var j=0; j<rand; j++)
+            html += '<li><a href="#Z">Composer Name Goes Here</a></li>';
+        html += '</ul>';
+        $(div).addClass("section").html(html);
+        console.log(Math.floor(i/9));
+        $("#container" + Math.floor(i/9)).append($(div));
+    });
+    
+}
+
+$(document).ready(function() {
+    //load_default();
+    load_index();
 });

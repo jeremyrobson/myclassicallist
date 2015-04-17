@@ -134,109 +134,29 @@
   </div>
 </div>
 
-<!-- subheader -->
+<!-- login -->
 
-<div id="subheader" class="">
-  <div class="container">
-
-      <ul class="nav nav-pills">
-        <li class="nav-right">
-          <a href="#">
-            <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
-              Welcome to MyCL
-            <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
-          </a>
-        </li>
-        <li class="nav-right active"><a href="home.php">Home</a></li>
-        <li class="nav-right"><a href="profile.php">Profile</a></li>
-        <li class="nav-right"><a href="messages.php">Messages <span class="badge">0</span></a></li>
-        <li class="nav-right"><a href="settings.php">Settings</a></li>
-      </ul>
-
-  </div>
-</div>
-
-<!-- main -->
-
-<div id="main" class="container-fluid">
-
+<div id="loginbody" class="container-fluid">
   <div class="row">
-  
-    <div id="mytoplist" class="col-sm-3 section">
-      <div id="default_header"><h3>My Top Composers</h3></div>
-      <ul class="list-group">
-        <li class="list-group-item showmore">
-          <h4><a href="#">Show More...</a></h4>
-        </li>
-      </ul>
+    <div id="empty" class="col-sm-4 section">
     </div>
-
-    <div id="myactivitylist" class="col-sm-6 section">
-      <div id="default_header"><h3>My Most Recent Activity</h3></div>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <a class="btn btn-primary" data-toggle="collapse" href="#newpostdiv" aria-expanded="false" aria-controls="newpostdiv">
-            New Post...
-          </a>
-          <div id="newpostdiv" class="container-fluid collapse">
-            <form id="newpostform" action="newpost.php" method="post">
-              <div class="form-group form-group-sm">
-                <label for="newposttitle">Title:</label>
-                <input id="newposttitle" class="form-control" type="text" placeholder="Title" name="newposttitle" />
-                <label for="newposttext">Text:</label>
-                <textarea id="newposttext" class="form-control custom-control" style="resize:none" placeholder="Text" name="newposttext" rows="8" cols="50"></textarea>
-              </div>
-              <div class="btn-group btn-group-sm pull-right">
-                <button id="postsubmit" class="btn btn-default" type="submit">Post</button>
-                <button id="postclear" class="btn btn-default" type="reset">Reset</button>
-              </div>
-            </form>
-          </div>
-        </li>
-        <li class="list-group-item showmore">
-          <h4><a href="#">Show More...</a></h4>
-        </li>
-      </ul>
+    <div id="loginmain" class="col-sm-4 section">
+      <div id="default_header"><h3>Login</h3>
+      </div>
+      <form id="loginform" action="login.php" method="post">
+        <div class="form-group form-group-sm">
+          <label for="username">Username:</label>
+          <input id="username" class="form-control" type="text" placeholder="Username" name="username" maxlength="32" />
+          <label for="password">Password:</label>
+          <input id="password" class="form-control" type="text" placeholder="Password" name="password" maxlength="64" />
+        </div>
+        <div class="btn-group btn-group-sm pull-right">
+          <button id="postlogin" class="btn btn-default" type="submit">Login</button>
+          <button id="postclear" class="btn btn-default" type="reset">Reset</button>
+        </div>
+      </form>
     </div>
-  
-    <div id="myfriendslist" class="col-sm-3 section">
-      <div id="default_header"><h3>My Friends</h3></div>
-      <ul class="list-group">
-        <li class="list-group-item showmore">
-          <h4><a href="#">Show More...</a></h4>
-        </li>
-      </ul>
-    </div>
-    
-    <div id="myeditslist" class="col-sm-3 section">
-      <div id="default_header"><h3>My Edits</h3></div>
-      <ul class="list-group">
-        <li class="list-group-item showmore">
-          <h4><a href="#">Show More...</a></h4>
-        </li>
-      </ul>
-    </div>
-
-    <div id="toplist" class="col-sm-3 section">
-      <div id="default_header"><h3>Top Rated Composers</h3></div>
-      <ul class="list-group">
-        <li class="list-group-item showmore">
-          <h4><a href="#">Show More...</a></h4>
-        </li>
-      </ul>
-    </div>
-
-    <div id="newsfeed" class="col-sm-6 section">
-      <div id="default_header"><h3>Latest News</h3></div>
-      <ul class="list-group">
-        <li class="list-group-item showmore">
-          <h4><a href="#">Show More...</a></h4>
-        </li>
-      </ul>
-    </div>
-    
   </div>
-  
 </div>
 
 <!-- footer -->

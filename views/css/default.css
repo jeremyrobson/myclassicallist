@@ -20,7 +20,7 @@ body {
 }
 
 /* show all textarea rows */
-#newposttext {
+#newposttext, #newcommenttext {
   height: 100%;
 }
 
@@ -29,7 +29,7 @@ body {
 .section:nth-child(6n+2) { background-color: #abcbab; /*ACA*/ }
 .section:nth-child(6n+3) { background-color: #cbabcb; /*CAC*/ }
 .section:nth-child(6n+4) { background-color: #ababcb; /*AAC*/ }
-.section:nth-child(6n+5) { background-color: #ababcb; /*CAA*/ }
+.section:nth-child(6n+5) { background-color: #cbabab; /*CAA*/ }
 
 #header {
     padding: 0;
