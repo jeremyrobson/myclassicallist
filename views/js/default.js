@@ -146,13 +146,47 @@ function load_index() {
             html += '<li><a href="#Z">Composer Name Goes Here</a></li>';
         html += '</ul>';
         $(div).addClass("section").html(html);
-        console.log(Math.floor(i/9));
         $("#container" + Math.floor(i/9)).append($(div));
     });
     
 }
 
+function load_composer() {
+    var profile = '<h3>Profile</h3>';
+    profile += '<img src="composer.jpg" />';
+    profile += '<table class="table">';
+    profile += '<tr><th>Name</th><td align="right">' + composers[0].name + '</td></tr>';
+    profile += '<tr><th>Birthdate</th><td align="right">' + composers[0].birthdate + '</td></tr>';
+    profile += '<tr><th>Birthplace</th><td align="right">' + composers[0].birthplace + '</td></tr>';
+    profile += '</table>';
+    
+    var works = '<h3>List of Works</h3>';
+    works += '<table class="table">';
+    works += '<tr><th>Year</th><th>Title</th></tr>'
+    composers[0].works.forEach(function(w) {
+       works += '<tr><td>' + w.year + '</td><td><a href="#">' + w.title + '</a></td></tr>';
+    });
+    works += '</table>';
+
+    var tags = '<h3>Tags</h3>';
+    composers[0].tags.forEach(function(t) {
+       tags += '<a href="#">#' + t + '</a> '; 
+    });
+    
+    var paragraphs = composers[0].biography.split("\n");
+    var biography = "<h3>Biography of " + composers[0].name + "</h3>";
+    paragraphs.forEach(function(p) {
+        biography +=  '<p style="text-indent: 5em;">' + p + '</p>';
+    });
+    
+    $("#profile").html(profile);
+    $("#biography").html(biography);
+    $("#works").html(works);
+    $("#tags").html(tags);
+}
+
 $(document).ready(function() {
     //load_default();
-    load_index();
+    //load_index();
+    load_composer();
 });

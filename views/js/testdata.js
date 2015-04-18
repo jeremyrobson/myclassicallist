@@ -89,9 +89,69 @@ var users = [
 
 var composers = [
     {
-        "_id": 0,
+        "_id": 34864 ,
         "name": "Gustav Mahler",
-        "birthdate": "7 July 1860"
+        "birthdate": "7 July 1860",
+        "birthplace": "Kalischt, Bohemia",
+        "biography": "Pour-over retro deep v, forage +1 pork belly Brooklyn lomo put a bird on it pickled. Ugh drinking vinegar XOXO, cray cred beard readymade swag iPhone McSweeney's. Raw denim iPhone swag organic deep v tattooed. Four dollar toast Kickstarter chia, 8-bit letterpress Wes Anderson fixie banh mi mlkshk synth cred. McSweeney's squid ethical artisan, four loko flannel actually seitan narwhal locavore American Apparel. Gentrify wayfarers irony, Tumblr health goth trust fund selvage whatever Intelligentsia VHS deep v art party disrupt wolf Williamsburg. Hoodie church-key flexitarian, tilde American Apparel freegan butcher distillery Marfa quinoa chillwave VHS. \n Semiotics wayfarers fingerstache, Tumblr banjo dreamcatcher pug shabby chic mlkshk migas food truck. Church-key VHS messenger bag, migas drinking vinegar twee Godard locavore keffiyeh asymmetrical yr +1 next level. Tote bag drinking vinegar health goth, migas typewriter ethical tousled pug. Chia next level mumblecore irony post-ironic, swag locavore food truck. Tattooed biodiesel cold-pressed authentic iPhone Tumblr PBR, squid farm-to-table dreamcatcher kale chips cornhole actually. Flannel letterpress Pitchfork, butcher PBR&B Helvetica Shoreditch tofu. Fingerstache freegan mlkshk flexitarian polaroid iPhone. \n Sriracha Brooklyn Schlitz PBR biodiesel organic. Food truck Pinterest fanny pack freegan, forage Portland synth salvia. Trust fund lomo asymmetrical narwhal you probably haven't heard of them tousled. Ennui narwhal XOXO, Schlitz meh cred Pinterest fingerstache chillwave VHS swag. Kale chips banjo vegan squid, readymade VHS occupy crucifix food truck hella. Kickstarter photo booth wolf selfies, Truffaut authentic leggings. Cornhole chia stumptown post-ironic, Bushwick Brooklyn YOLO leggings food truck fixie kogi. \nNeutra raw denim Echo Park gastropub Portland, cred 90's listicle. Messenger bag fap kogi, twee Etsy keffiyeh chambray. Ugh keytar bespoke salvia seitan PBR&B. Kickstarter Godard four dollar toast occupy Williamsburg butcher. Banh mi tofu stumptown PBR American Apparel meditation deep v farm-to-table, master cleanse hoodie occupy. XOXO lomo art party, lumbersexual quinoa raw denim irony squid Neutra biodiesel. Meh direct trade Carles fashion axe, health goth biodiesel pork belly bitters meggings Schlitz drinking vinegar authentic.",
+        "tags": [
+            "symphony",
+            "lieder",
+            "quintet",
+            "unfinished"
+        ],
+        "works": [
+            {
+                "_id": 24542,
+                "composerid": 34864,
+                "title": "Symphony No. 5",
+                "year": 1902,
+                "key": "C-sharp minor",
+                "movements": 5,
+                "reviews": [
+                    {
+                        "userid": 4356,
+                        "username": "bob",
+                        "date": "January 1st, 2015",
+                        "rating": 9.4,
+                        "likes": [
+                            {
+                                "userid": 7338,
+                                "username": "bill"
+                            },
+                            {
+                                "userid": 8336,
+                                "username": "harold"
+                            },
+                            {
+                                "userid": 7534,
+                                "username": "kumar"
+                            }
+                        ],
+                        "title": "Yayyyy!",
+                        "text": "Four dollar toast meggings heirloom, iPhone four loko listicle stumptown slow-carb health goth plaid typewriter. Marfa swag sartorial +1, letterpress 8-bit synth artisan Kickstarter cliche keytar stumptown next level Blue Bottle. Cold-pressed craft beer cliche brunch next level, literally Godard single-origin coffee twee put a bird on it occupy pickled locavore Vice Marfa. Hoodie slow-carb butcher shabby chic McSweeney's VHS. Forage banh mi bicycle rights cred fingerstache master cleanse. Biodiesel messenger bag stumptown squid flannel tofu. Cold-pressed seitan actually, street art ethical ugh authentic meh paleo pour-over VHS photo booth."
+                    },
+                    {
+                        "userid": 4356,
+                        "username": "frank",
+                        "date": "January 1st, 2015",
+                        "rating": 9.8,
+                        "likes": [
+                            {
+                                "userid": 4735,
+                                "username": "jim"
+                            },
+                            {
+                                "userid": 3462,
+                                "username": "tim"
+                            }
+                        ],
+                        "title": "Hoorayyy!!",
+                        "text": "Meditation sartorial biodiesel, bitters organic iPhone deep v literally photo booth plaid banjo butcher. Banh mi sustainable vinyl Godard fingerstache brunch mumblecore. Fanny pack cliche tote bag, meggings lo-fi typewriter disrupt pop-up swag ethical. Vinyl fap craft beer, farm-to-table art party skateboard lo-fi PBR brunch. Drinking vinegar whatever leggings, sriracha taxidermy pop-up raw denim readymade Blue Bottle four dollar toast banh mi umami McSweeney's. Pork belly scenester art party jean shorts. Locavore food truck synth ugh yr, trust fund Brooklyn polaroid mustache Austin scenester."
+                    }
+                ]
+            }
+        ]
     }
 ];
 
