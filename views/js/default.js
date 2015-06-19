@@ -1,3 +1,4 @@
+/// <reference path="../../typings/jquery/jquery.d.ts"/>
 function load_comment(data, index) {
     var comment = document.createElement("li");
     var commentusername = data.username;
@@ -186,7 +187,7 @@ function load_composer() {
 }
 
 $(document).ready(function() {
-    //load_default();
+    load_default();
     //load_index();
-    load_composer();
+    //load_composer();
 });

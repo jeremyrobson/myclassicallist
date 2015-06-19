@@ -1,17 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <title>My Classical List - v0.1a</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
-  <link rel="stylesheet" type="text/css" href="css/default.css" />
-  <script src="js/jquery-2.1.3.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-</head>
-<body>
 <nav id="topnav" class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -32,10 +18,10 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-            <li><a href="search.php?type=composers">Composer Search</a></li>
-            <li><a href="reviews.php?type=composers">Reviews</a></li>
-            <li><a href="recommendations.php?type=composers">Reccomendations</a></li>
-            <li><a href="toplist.php?type=composers">Top Composers</a></li>
+            <li><a href="index.php?page=search&type=composers">Composer Search</a></li>
+            <li><a href="views/reviews.php?type=composers">Reviews</a></li>
+            <li><a href="views/recommendations.php?type=composers">Reccomendations</a></li>
+            <li><a href="views/toplist.php?type=composers">Top Composers</a></li>
           </ul>
         </li>
         
@@ -120,5 +106,3 @@
     </div>
   </div>
 </nav>
-</body>
-</html>
